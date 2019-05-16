@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
+import ShoppingList from './components/ShoppingList';
+import ShoppingForm from './components/ShoppingForm';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: []
+    }
+  }
+
+  addToList = (item) => {
+    let tempList = this.state.list.concat(item);
+    this.setState({
+      list: tempList
+    })
+  }
+
+  removeFromList = (index) => {
+    let tempList = this.state.list;
+    tempList.splice(index, 1);
+    this.setState({
+      list: tempList
+    })
+  }
+
+  render() {
+    return (
+      <>
+        <div className="App">
+          <h3>Shopping List</h3>
+          <hr />
+          <ShoppingForm addToList={this.addToList} />
+          <hr />
+        </div>
+        <div>
+          <ShoppingList list={this.state.list}
+            removeFromList={this.removeFromList} />
+        </div>
+      </>
+    );
+  }
 }
 
 export default App;
