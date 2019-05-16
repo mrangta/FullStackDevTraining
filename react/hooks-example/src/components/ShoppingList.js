@@ -17,10 +17,12 @@ const ShoppingList = ({ list, removeFromList }) => {
     return (
         <Table id="customers">
             <Table.Header>
-                <Table.HeaderCell>Type</Table.HeaderCell>
-                <Table.HeaderCell>Count</Table.HeaderCell>
-                <Table.HeaderCell>Price</Table.HeaderCell>
-                <Table.HeaderCell>Remove</Table.HeaderCell>
+                <Table.Row>
+                    <Table.HeaderCell>Type</Table.HeaderCell>
+                    <Table.HeaderCell>Count</Table.HeaderCell>
+                    <Table.HeaderCell>Price</Table.HeaderCell>
+                    <Table.HeaderCell>Remove</Table.HeaderCell>
+                </Table.Row>
             </Table.Header>
             <Table.Body>
                 {items}
