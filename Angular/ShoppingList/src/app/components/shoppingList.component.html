@@ -1,0 +1,31 @@
+<div>
+  <h1>Shopping List</h1>
+  <form #appleForm="ngForm" (ngSubmit)="addItem()">
+    <div>
+
+      <label for="itemType">Enter Item Name </label>
+      <input type="text" id="itemType" required [(ngModel)]="item.itemType" name="itemType" /><br />
+
+      <label for="itemPrice">Enter Item Price </label>
+      <input type="text" id="itemPrice" required [(ngModel)]="item.itemPrice" name="itemPrice" /><br />
+
+      <label for="itemCount">Enter Item Count </label>
+      <input type="text" id="itemCount" required [(ngModel)]="item.itemCount" name="itemCount" /><br />
+      <div><input type="submit" value="Add to List" /></div>
+      <table>
+        <tr>
+          <th>Item Name</th>
+          <th>Item Count</th>
+          <th>Item Price</th>
+        </tr>
+        <tr *ngFor="let a of items; let idx = index">
+          <td> {{a.itemType}}</td>
+          <td> {{a.itemCount}}</td>
+          <td> {{a.itemPrice}}</td>
+          <td><button (click)="removeFromList(idx)">Remove</button></td>
+        </tr>
+      </table>
+
+    </div>
+  </form>
+</div>
