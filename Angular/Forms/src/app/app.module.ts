@@ -1,13 +1,13 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { Bucket } from "./components/bucket.component";
-import { Apple } from "./components/apple.component";
+import { MyForm } from "./components/myForm.component";
 
 @NgModule({
-  declarations: [AppComponent, Bucket, Apple],
-  imports: [BrowserModule],
+  declarations: [AppComponent, MyForm],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

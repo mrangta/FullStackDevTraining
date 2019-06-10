@@ -1,0 +1,15 @@
+<div>
+  <h1>The Apple Basket</h1>
+  <form (ngSubmit)="addApple()" #appleForm="ngForm">
+    <div>
+      <label for="color">Enter apple color </label>
+      <input type="text" id="color" required [(ngModel)]="apple.color" name="color" #colorInput="ngModel" />
+    </div><br />
+    <div><input type="submit" value="Add to basket" /></div>
+  </form>
+  <ul style="list-style-type:none">
+    <li *ngFor="let a of apples">
+      <p>Apple Color : {{a.color}}</p>
+    </li>
+  </ul>
+</div>
